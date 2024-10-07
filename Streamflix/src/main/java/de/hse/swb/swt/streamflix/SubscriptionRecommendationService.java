@@ -10,7 +10,7 @@
  * details (a copy is included in the LICENSE file that
  * accompanied this code).
  */
-package de.hse.swb.swt.streamflix;
+package Streamflix.src.main.java.de.hse.swb.swt.streamflix;
 
 /**
  * This class represents a recommendation service for StreamFlix subscriptions.
@@ -29,22 +29,22 @@ public class SubscriptionRecommendationService {
      * Example call: String recommendedAbo = recommendModel(true, 4, true, 6);
      */
     public static String recommendModel(boolean requiresNoAds, int devicesToWatch, boolean requiresUltraHD, int devicesToDownload) {
-        // Premium model (P)
-        if (requiresNoAds && requiresUltraHD && devicesToWatch > 2 && devicesToDownload > 2) {
-            return "P"; // Premium
-        }
-        
-        // Standard model (S)
-        if (requiresNoAds && devicesToWatch <= 2 && devicesToDownload >= 2) {
-            return "S"; // Standard
+        boolean isPremiumModel = requiresNoAds && requiresUltraHD && devicesToWatch > 2 && devicesToDownload > 2;
+        if (isPremiumModel) {
+            return "P";
         }
 
-        // Basis model (B)
-        if (requiresNoAds && devicesToWatch >= 2 && devicesToDownload == 1) {
-            return "B"; // Basis
+        boolean isStandardModel = requiresNoAds && devicesToWatch <= 2 && devicesToDownload >= 2;
+        if (isStandardModel) {
+            return "S";
         }
 
-        // Standard-Abo with ads (W)
-        return "W"; // Standard Abo with Ads
+        boolean isBasisModel = requiresNoAds && devicesToWatch >= 2 && devicesToDownload == 1;
+        if (isBasisModel) {
+            return "B";
+        }
+
+        String standardAbo = "W";
+        return standardAbo;
     }
 }
