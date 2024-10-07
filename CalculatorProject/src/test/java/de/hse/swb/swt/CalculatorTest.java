@@ -10,10 +10,11 @@
  * details (a copy is included in the LICENSE file that
  * accompanied this code).
  */
-package de.hse.swb.swt;
+package CalculatorProject.src.test.java.de.hse.swb.swt;
 
-import static org.junit.jupiter.api.Assertions.*;
+import CalculatorProject.src.main.java.de.hse.swb.swt.Calculator;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit test for the Calculator class.
@@ -31,6 +32,7 @@ class CalculatorTest {
      * - adding with no operands (expects 0.0)
      * - adding a single number
      */
+
     @Test
     void testAdd() {
         // Test adding positive numbers

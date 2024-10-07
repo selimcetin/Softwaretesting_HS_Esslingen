@@ -10,7 +10,7 @@
  * details (a copy is included in the LICENSE file that
  * accompanied this code).
  */
-package de.hse.swb.swt.nametool;
+package NameTool.src.main.java.de.hse.swb.swt.nametool;
 
 /**
  * Utility class for handling and manipulating names.
@@ -35,7 +35,7 @@ public class NameTool {
         String s3 = s1 + " " + s2;
 
         // Check if the length of s1 exceeds the limit
-        if (s1.length() > LIMIT) {
+        if (s3.length() > LIMIT) {
             // Return the combined string truncated to the limit
             return s3.substring(0, LIMIT);
         }

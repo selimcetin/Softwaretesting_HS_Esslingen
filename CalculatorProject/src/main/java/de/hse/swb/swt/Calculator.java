@@ -10,7 +10,7 @@
  * details (a copy is included in the LICENSE file that
  * accompanied this code).
  */
-package de.hse.swb.swt;
+package CalculatorProject.src.main.java.de.hse.swb.swt;
 
 import java.util.stream.DoubleStream;
 
@@ -28,7 +28,8 @@ public class Calculator {
      * @param operands an array of double values to be added
      * @return the sum of the operands, or 0.0 if no operands are provided
      */
-    static double add(double... operands) {
+
+    public static double add(double... operands) {
         return DoubleStream.of(operands)
                            .sum();
     }
@@ -39,7 +40,7 @@ public class Calculator {
      * @param operands an array of double values to be multiplied
      * @return the product of the operands, or 1.0 if no operands are provided
      */
-    static double multiply(double... operands) {
+    public static double multiply(double... operands) {
         return DoubleStream.of(operands)
                            .reduce(1, (a, b) -> a * b);
     }
