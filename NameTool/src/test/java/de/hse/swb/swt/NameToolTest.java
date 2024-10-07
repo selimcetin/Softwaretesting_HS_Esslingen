@@ -1,6 +1,7 @@
 package NameTool.src.test.java.de.hse.swb.swt;
 
 import NameTool.src.main.java.de.hse.swb.swt.nametool.NameTool;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.lang.reflect.Field;
@@ -20,14 +21,28 @@ public class NameToolTest {
         secondParam = "second";
     }
 
+    @AfterEach
+    void TearDown(){
+
+    }
+
     @Test
     void newName_firstParamOverLimit_NotOverLimit(){
+        // Setup
+        //------
         firstParam = "Menschenskindermaenner";
         String expectedResult = firstParam.substring(0, limitValue);
 
+        // Exercise
+        //---------
         actualResult = NameTool.newName(firstParam, secondParam);
 
+        // Verify
+        //-------
         assertEquals(expectedResult, actualResult);
+
+        // Teardown
+
     }
 
     @Test
